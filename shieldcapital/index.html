@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShieldCapital | Secure Investment Protocol</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <img src="images/logo-shc-white.png" alt="ShieldCapital Logo">
+                <span>ShieldCapital</span>
+            </div>
+            <div class="nav-links">
+                <a href="#features">Features</a>
+                <a href="#tokenomics">Tokenomics</a>
+                <a href="#technology">Technology</a>
+                <a href="#roadmap">Roadmap</a>
+                <a href="#team">Team</a>
+                <button class="btn-primary">Launch App</button>
+            </div>
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Invest with Confidence</h1>
+            <p>ShieldCapital combines blockchain escrow with decentralized insurance to protect your investments</p>
+            <div class="cta-buttons">
+                <button class="btn-primary btn-large">Explore Investments</button>
+                <button class="btn-outline btn-large"
+                        onclick="window.open('https://drive.google.com/file/d/1wdU-dilN-U2ywkELA722ucagaDc3lOyQ/view?usp=sharing')">
+                    Read Whitepaper</button>
+                        
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="container">
+            <div class="stat-card">
+                <h3>$4.3B+</h3>
+                <p>Lost annually to fraud</p>
+            </div>
+            <div class="stat-card">
+                <h3>70-90%</h3>
+                <p>Loss coverage</p>
+            </div>
+            <div class="stat-card">
+                <h3>24-48h</h3>
+                <p>Dispute resolution</p>
+            </div>
+            <div class="stat-card">
+                <h3>100%</h3>
+                <p>On-chain transparency</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <h2>How ShieldCapital Protects You</h2>
+            
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <h3>Smart Contract Escrow</h3>
+                    <p>Funds are locked in multi-signature smart contracts until predefined business milestones are verified by Chainlink oracles.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Insurance Pool Protection</h3>
+                    <p>5% of all investments are allocated to a decentralized insurance pool that compensates investors if projects fail.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Real-time Analytics</h3>
+                    <p>Our dashboard provides on-chain tracking of ROI, burn rate, and milestone completion powered by The Graph.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+<!-- Live Crypto Charts Section -->
+<section id="crypto-charts" class="py-16 bg-gray-50">
+  <div class="container mx-auto px-4">
+    <h2 class="text-3xl md:text-4xl font-bold text-center mb-8">Live Crypto Charts</h2>
+    
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+      <!-- Ethereum Chart -->
+      <div class="bg-white p-6 rounded-xl shadow-md">
+        <div class="flex justify-between items-center mb-6">
+          <div class="flex items-center">
+            <img src="https://cryptologos.cc/logos/ethereum-eth-logo.png" alt="Ethereum" class="h-8 w-8 mr-2">
+            <h3 class="text-xl font-bold">Ethereum (ETH)</h3>
+          </div>
+          <div class="flex space-x-2">
+            <button class="timeframe-btn active" data-coin="eth" data-timeframe="1D">24H</button>
+            <button class="timeframe-btn" data-coin="eth" data-timeframe="7D">7D</button>
+            <button class="timeframe-btn" data-coin="eth" data-timeframe="1M">1M</button>
+            <button class="timeframe-btn" data-coin="eth" data-timeframe="1Y">1Y</button>
+          </div>
+        </div>
+        
+        <div class="chart-container" style="position: relative; height: 300px;">
+          <canvas id="ethChart"></canvas>
+        </div>
+        
+        <div class="grid grid-cols-3 gap-4 mt-6">
+          <div class="bg-gray-100 p-3 rounded-lg">
+            <div class="text-gray-600 text-sm">Price</div>
+            <div class="text-lg font-bold" id="eth-price">$0.00</div>
+          </div>
+          <div class="bg-gray-100 p-3 rounded-lg">
+            <div class="text-gray-600 text-sm">24h Change</div>
+            <div class="text-lg font-bold" id="eth-change">0.00%</div>
+          </div>
+          <div class="bg-gray-100 p-3 rounded-lg">
+            <div class="text-gray-600 text-sm">24h Volume</div>
+            <div class="text-lg font-bold" id="eth-volume">$0.00</div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Solana Chart -->
+      <div class="bg-white p-6 rounded-xl shadow-md">
+        <div class="flex justify-between items-center mb-6">
+          <div class="flex items-center">
+            <img src="https://cryptologos.cc/logos/solana-sol-logo.png" alt="Solana" class="h-8 w-8 mr-2">
+            <h3 class="text-xl font-bold">Solana (SOL)</h3>
+          </div>
+          <div class="flex space-x-2">
+            <button class="timeframe-btn active" data-coin="sol" data-timeframe="1D">24H</button>
+            <button class="timeframe-btn" data-coin="sol" data-timeframe="7D">7D</button>
+            <button class="timeframe-btn" data-coin="sol" data-timeframe="1M">1M</button>
+            <button class="timeframe-btn" data-coin="sol" data-timeframe="1Y">1Y</button>
+          </div>
+        </div>
+        
+        <div class="chart-container" style="position: relative; height: 300px;">
+          <canvas id="solChart"></canvas>
+        </div>
+        
+        <div class="grid grid-cols-3 gap-4 mt-6">
+          <div class="bg-gray-100 p-3 rounded-lg">
+            <div class="text-gray-600 text-sm">Price</div>
+            <div class="text-lg font-bold" id="sol-price">$0.00</div>
+          </div>
+          <div class="bg-gray-100 p-3 rounded-lg">
+            <div class="text-gray-600 text-sm">24h Change</div>
+            <div class="text-lg font-bold" id="sol-change">0.00%</div>
+          </div>
+          <div class="bg-gray-100 p-3 rounded-lg">
+            <div class="text-gray-600 text-sm">24h Volume</div>
+            <div class="text-lg font-bold" id="sol-volume">$0.00</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="text-center mt-8 text-gray-500 text-sm">
+      Data updates every 60 seconds. Last updated: <span id="last-updated">-</span>
+    </div>
+  </div>
+</section>
+
+    <!-- Tokenomics Section -->
+    <section id="tokenomics" class="tokenomics">
+        <div class="container">
+            <h2>SHC Tokenomics</h2>
+            
+            <div class="tokenomics-content">
+                <div class="tokenomics-chart">
+                    <canvas id="tokenChart"></canvas>
+                </div>
+                
+                <div class="tokenomics-details">
+                    <h3>Token Utility</h3>
+                    
+                    <div class="utility-item">
+                        <div class="utility-icon">
+                            <i class="fas fa-coins"></i>
+                        </div>
+                        <div>
+                            <h4>Staking Rewards</h4>
+                            <p>Earn fees from the insurance pool by staking SHC tokens</p>
+                        </div>
+                    </div>
+                    
+                    <div class="utility-item">
+                        <div class="utility-icon">
+                            <i class="fas fa-vote-yea"></i>
+                        </div>
+                        <div>
+                            <h4>Governance Rights</h4>
+                            <p>Vote on protocol upgrades and insurance claim approvals</p>
+                        </div>
+                    </div>
+                    
+                    <div class="utility-item">
+                        <div class="utility-icon">
+                            <i class="fas fa-percentage"></i>
+                        </div>
+                        <div>
+                            <h4>Fee Discounts</h4>
+                            <p>Reduced platform fees when paying with SHC tokens</p>
+                        </div>
+                    </div>
+                    
+                    <div class="tokenomics-note">
+                        <h4>Deflationary Mechanism</h4>
+                        <p>1% of all platform fees are burned quarterly, reducing total SHC supply and increasing scarcity.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team" class="team">
+        <div class="container">
+            <h2>Our Team</h2>
+            
+            <div class="team-grid">
+                <div class="team-card">
+                    <img src="images/team-sahale.jpg" alt="Sahale Kristiawan">
+                    <div class="team-info">
+                        <h3>Sahale Kristiawan</h3>
+                        <p class="position">CEO & Founder</p>
+                        <p class="bio"> Blockchain experience since 2016.in alternative investments.</p>
+                        <div class="social-links">
+                            <a href="https://www.instagram.com/sahalekristiawan._?igsh=NWVmZXR1Nmg3bXMx"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="team-card">
+                    <img src="images/team-john.jpg" alt="unknown">
+                    <div class="team-info">
+                        <h3>unknown</h3>
+                        <p class="position">CTO</p>
+                        <p class="bio">Built DeFi protocols with $500M+ TVL. Smart contract security expert with 8 years of blockchain development.</p>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                            <a href="#"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="team-card">
+                    <img src="images/team-alan.jpg" alt="unknown">
+                    <div class="team-info">
+                        <h3>unknown</h3>
+                        <p class="position">Advisor</p>
+                        <p class="bio">Director of Stanford Crypto Lab. Former SEC consultant on blockchain regulation. PhD in Computer Science.</p>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                            <a href="#"><i class="fas fa-graduation-cap"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <h2>Ready to Invest with Protection?</h2>
+            <p>Join ShieldCapital today and experience the future of secure, transparent investing.</p>
+            <button class="btn-primary btn-large">Get Started</button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <img src="images/logo-shc-white.png" alt="ShieldCapital Logo">
+                        <span>ShieldCapital</span>
+                    </div>
+                    <p>The next-generation investment protection protocol with smart contract insurance.</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Product</h4>
+                    <ul>
+                        <li><a href="#">How It Works</a></li>
+                        <li><a href="#">Features</a></li>
+                        <li><a href="#">Tokenomics</a></li>
+                        <li><a href="#">Roadmap</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="#">Whitepaper</a></li>
+                        <li><a href="#">Documentation</a></li>
+                        <li><a href="#">Audit Reports</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h4>Connect</h4>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-telegram"></i></a>
+                        <a href="#"><i class="fab fa-discord"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                    </div>
+                    <p>contact@shieldcapital.com</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>© 2023 ShieldCapital. All rights reserved.</p>
+                <div class="legal-links">
+                    <a href="#">Terms</a>
+                    <a href="#">Privacy</a>
+                    <a href="#">Disclaimer</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="SHIELDCAPITAL/js/crypto-chart.js"></script>
+    <script src="SHIELDCAPITAL/js/main.js"></script>
+</body>
+</html>
